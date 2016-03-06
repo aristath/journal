@@ -725,5 +725,17 @@ object {
 /*--------------------------------------------------------------
 # Journal Specific
 --------------------------------------------------------------*/
+#masthead {
+  background-color: #fff;
+  padding: 30px 60px; }
+  #masthead .site-branding .site-title {
+    padding: 0;
+    margin: 0;
+    line-height: 1; }
+    #masthead .site-branding .site-title a {
+      color: #000;
+      font-size: 1.3rem;
+      text-decoration: none;
+      font-family: "Roboto Slab", serif; }
 
 /*# sourceMappingURL=style.css.map */
