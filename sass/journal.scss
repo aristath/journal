@@ -1,6 +1,9 @@
 body {
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
+	font-size: 16px;
+	font-weight: 300;
+	font-family: Roboto;
 }
 
 #masthead {
@@ -25,19 +28,23 @@ body {
 					color: #000;
 					text-decoration: none;
 					font-family: "Roboto Slab", serif;
+					font-weight: 700;
 				}
 			}
 		}
 
 		#site-navigation {
 			width: 62%;
-			dont-family: Roboto;
 
 			ul#primary-menu {
 				li {
 					display: inline-block;
 					text-align: center;
-					padding-right: 1.5rem;
+					padding: 0 1rem;
+
+					&.current-menu-item {
+						border-bottom: 1px solid rgba(0,0,0,.1);
+					}
 
 					a {
 						color: #777;

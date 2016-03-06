@@ -719,7 +719,10 @@ object {
 --------------------------------------------------------------*/
 body {
   -ms-word-wrap: break-word;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: Roboto; }
 
 #masthead .top-header {
   display: flex;
@@ -738,14 +741,16 @@ body {
       #masthead .top-header .site-branding .site-title a {
         color: #000;
         text-decoration: none;
-        font-family: "Roboto Slab", serif; }
+        font-family: "Roboto Slab", serif;
+        font-weight: 700; }
   #masthead .top-header #site-navigation {
-    width: 62%;
-    dont-family: Roboto; }
+    width: 62%; }
     #masthead .top-header #site-navigation ul#primary-menu li {
       display: inline-block;
       text-align: center;
-      padding-right: 1.5rem; }
+      padding: 0 1rem; }
+      #masthead .top-header #site-navigation ul#primary-menu li.current-menu-item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
       #masthead .top-header #site-navigation ul#primary-menu li a {
         color: #777;
         font-weight: 300;
