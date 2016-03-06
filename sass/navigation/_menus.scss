@@ -1,9 +1,4 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-
 	ul {
 		display: none;
 		list-style: none;
@@ -48,16 +43,6 @@
 			left: auto;
 		}
 	}
-	
-	li {
-		float: left;
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-	
 	a {
 		display: block;
 		text-decoration: none;

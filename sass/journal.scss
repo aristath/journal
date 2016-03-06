@@ -1,19 +1,59 @@
 #masthead {
-	background-color: #fff;
-	padding: 30px 60px;
+	.top-header {
+		display: flex;
+		flex-wrap: nowrap;
+		flex-flow: flex-start;
+		flex-direction: row;
+		background-color: #fff;
+		padding: 30px 60px;
 
-	.site-branding {
-		.site-title {
-			padding: 0;
-			margin: 0;
-			line-height: 1;
+		.site-branding {
+			width: 38%;
 
-			a {
-				color: #000;
+			.site-title {
+				padding: 0;
+				margin: 0;
 				font-size: 1.3rem;
-				text-decoration: none;
-				font-family: "Roboto Slab", serif;
+				line-height: 1.3rem;
+
+				a {
+					color: #000;
+					text-decoration: none;
+					font-family: "Roboto Slab", serif;
+				}
 			}
+		}
+
+		#site-navigation {
+			width: 62%;
+			dont-family: Roboto;
+
+			ul#primary-menu {
+				li {
+					display: inline-block;
+					text-align: center;
+					padding-right: 1.5rem;
+
+					a {
+						color: #777;
+						font-weight: 300;
+						text-transform: uppercase;
+						font-size: .85rem;
+					}
+				}
+			}
+		}
+	}
+
+	.bottom-header {
+		background-color: rgba(0,0,0,.3);
+		padding: 60px;
+		background-size: cover;
+
+		.site-description {
+			font-size: 2.5rem;
+			font-family: "Roboto Slab", serif;
+			color: #fff;
 		}
 	}
 }
