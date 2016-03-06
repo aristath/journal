@@ -20,6 +20,11 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
+			<div class="author-avatar">
+				<a href="<?php echo get_the_author_link(); ?>">
+					<?php echo get_avatar( get_the_author_meta( 'ID' ), 160 ); ?>
+				</a>
+			</div>
 			<?php journal_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
@@ -27,6 +32,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php journal_post_thumbnail(); ?>
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
@@ -45,3 +51,4 @@
 		<?php journal_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+<hr class="post-separator">

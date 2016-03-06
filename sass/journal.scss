@@ -1,7 +1,7 @@
 body {
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 300;
 	font-family: Roboto;
 }
@@ -71,9 +71,57 @@ body {
 }
 
 #content {
-	width: 90%;
-	max-width: 60rem;
-	margin: auto;
-	background: #fff;
-	padding: 2rem;
+	.entry-header,
+	.entry-content,
+	.entry-footer {
+		width: 90%;
+		max-width: 60rem;
+		margin: auto;
+		background: #fff;
+		padding: 0 2rem;
+	}
+}
+
+
+.entry-header {
+	text-align: center;
+
+	a {
+		text-decoration: none;
+		color: #000;
+		text-decoration: none;
+	}
+	.entry-title {
+		font-size: 3rem;
+		font-family: "Roboto Slab", serif;
+		color: #000;
+	}
+	.entry-meta {
+		font-size: .8rem;
+		color: #999;
+
+		a {
+			color: #999;
+		}
+		.author-avatar {
+			img {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+hr.post-separator {
+	margin: 4em 0 3em 0;
+	background-color: rgba(0,0,0,.1);
+}
+
+.post-thumbnail {
+	text-align: center;
+
+	img {
+		width: 100%;
+	}
 }

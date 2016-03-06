@@ -97,18 +97,18 @@ add_action( 'after_setup_theme', 'journal_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function journal_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'journal' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'journal_widgets_init' );
+// function journal_widgets_init() {
+// 	register_sidebar( array(
+// 		'name'          => esc_html__( 'Sidebar', 'journal' ),
+// 		'id'            => 'sidebar-1',
+// 		'description'   => '',
+// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+// 		'after_widget'  => '</section>',
+// 		'before_title'  => '<h2 class="widget-title">',
+// 		'after_title'   => '</h2>',
+// 	) );
+// }
+// add_action( 'widgets_init', 'journal_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -150,3 +150,20 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+function journal_post_thumbnail() {
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		return;
+	}
+	?>
+
+	<?php if ( is_singular() ) : ?>
+		<div class="post-thumbnail">
+			<?php the_post_thumbnail( 'full' ); ?>
+		</div><!-- .post-thumbnail -->
+	<?php else : ?>
+		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+			<?php the_post_thumbnail( 'full', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+		</a>
+	<?php endif; // End is_singular()
+}
