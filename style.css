@@ -717,6 +717,10 @@ object {
 /*--------------------------------------------------------------
 # Journal Specific
 --------------------------------------------------------------*/
+body {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word; }
+
 #masthead .top-header {
   display: flex;
   flex-wrap: nowrap;
@@ -755,5 +759,12 @@ object {
     font-size: 2.5rem;
     font-family: "Roboto Slab", serif;
     color: #fff; }
+
+#content {
+  width: 90%;
+  max-width: 60rem;
+  margin: auto;
+  background: #fff;
+  padding: 2rem; }
 
 /*# sourceMappingURL=style.css.map */
