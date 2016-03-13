@@ -43,27 +43,38 @@ if ( ! function_exists( 'journal_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function journal_entry_footer() {
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'journal' ) );
-		if ( $categories_list && journal_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'journal' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
+function journal_entry_footer() { ?>
+	<?php if ( 'post' === get_post_type() ) : ?>
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'journal' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'journal' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
+		<div class="post-categories">
+			<?php $categories = get_the_category(); ?>
+			<?php if ( ! empty( $categories ) ) : ?>
+				<?php foreach( $categories as $category ) : ?>
+					<a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" alt="<?php echo esc_attr( sprintf( esc_attr__( 'View all posts in %s', 'journal' ), $category->name ) ); ?>">
+						<?php echo esc_html( $category->name ); ?>
+					</a>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'journal' ), esc_html__( '1 Comment', 'journal' ), esc_html__( '% Comments', 'journal' ) );
-		echo '</span>';
-	}
+		<div class="post-tags">
+			<?php $tags = get_the_tags(); ?>
+			<?php if ( ! empty( $tags ) ) : ?>
+				<?php foreach( $tags as $tag ) : ?>
+					<a href="<?php echo esc_url( get_category_link( $tag->term_id ) ); ?>" alt="<?php echo esc_attr( sprintf( esc_attr__( 'View all posts in %s', 'journal' ), $tag->name ) ); ?>">
+						<?php echo esc_html( $tag->name ); ?>
+					</a>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
+
+	<?php endif; ?>
+
+	<?php if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+		<span class="comments-link">
+			<?php comments_popup_link( esc_html__( 'Leave a comment', 'journal' ), esc_html__( '1 Comment', 'journal' ), esc_html__( '% Comments', 'journal' ) ); ?>
+		</span>
+	<?php endif;
 
 	edit_post_link(
 		sprintf(

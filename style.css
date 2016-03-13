@@ -786,6 +786,12 @@ body {
     font-size: 3rem;
     font-family: "Roboto Slab", serif;
     color: #000; }
+    .entry-header .entry-title:after {
+      content: " ";
+      display: block;
+      border-bottom: 2px solid #000;
+      width: 1em;
+      margin: auto; }
   .entry-header .entry-meta {
     font-size: .8rem;
     color: #999; }
@@ -804,5 +810,35 @@ hr.post-separator {
   text-align: center; }
   .post-thumbnail img {
     width: 100%; }
+
+.post-categories a,
+.post-tags a {
+  padding: .1em .3em;
+  text-decoration: none;
+  background-color: #C62828;
+  margin: .1em;
+  display: inline-block;
+  color: #fff;
+  border-radius: 3px;
+  font-size: .75em; }
+  .post-categories a:hover,
+  .post-tags a:hover {
+    color: #fff; }
+
+.post-tags a {
+  background-color: #FF5722; }
+
+.post-edit-link {
+  float: right;
+  padding: .1em .3em;
+  text-decoration: none;
+  background-color: #000;
+  margin: .1em;
+  display: inline-block;
+  color: #fff;
+  border-radius: 3px;
+  font-size: .75em; }
+  .post-edit-link:hover {
+    color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

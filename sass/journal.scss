@@ -95,6 +95,14 @@ body {
 		font-size: 3rem;
 		font-family: "Roboto Slab", serif;
 		color: #000;
+
+		&:after {
+			content: " ";
+			display: block;
+			border-bottom: 2px solid #000;
+			width: 1em;
+			margin: auto;
+		}
 	}
 	.entry-meta {
 		font-size: .8rem;
@@ -123,5 +131,43 @@ hr.post-separator {
 
 	img {
 		width: 100%;
+	}
+}
+
+.post-categories,
+.post-tags {
+	a {
+		padding: .1em .3em;
+		text-decoration: none;
+		background-color: #C62828;
+		margin: .1em;
+		display: inline-block;
+		color: #fff;
+		border-radius: 3px;
+		font-size: .75em;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+.post-tags a {
+	background-color: #FF5722;
+}
+
+.post-edit-link {
+	float: right;
+	padding: .1em .3em;
+	text-decoration: none;
+	background-color: #000;
+	margin: .1em;
+	display: inline-block;
+	color: #fff;
+	border-radius: 3px;
+	font-size: .75em;
+
+	&:hover {
+		color: #fff;
 	}
 }

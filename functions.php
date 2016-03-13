@@ -6,7 +6,19 @@
  *
  * @package Journal
  */
+function category_color_brightness( $color, $amount ) {
 
+    // Create a new object using hex as our original color
+    $color_obj = ariColor::newColor( $color, 'hex' );
+
+    // Darken the color by some amount
+    $result_color = $color_obj->getNew( 'lightness', $color_obj->lightness - $amount );
+
+    // return HEX color
+    return $result_color->hex;
+}
+
+var_dump( category_color_brightness( '#505050', -200 ) );
 if ( ! function_exists( 'journal_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
